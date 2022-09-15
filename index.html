@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Password Gernator & encri decrypt</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/dh-navbar-centered-brand.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="assets/css/box.css">
+    <link rel="stylesheet" href="assets/css/encri.css">
+    <link rel="stylesheet" href="assets/css/dencri.css">
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.js"
+      integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+      crossorigin="anonymous"></script>
+
+    <script src="crypto-js-aes.js"></script>
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark navbar-expand-md sticky-top bg-dark" data-aos="zoom-in-down">
+        <div class="container-fluid">
+            <div><a class="navbar-brand navbar-brand-centered" href="#"> <img style="max-height:50px;" src="assets/img/dh.png"></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button></div>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a id="btn" class="nav-link" href="#">Password Gernator </a></li>
+                    <li class="nav-item"><a id="btnencri" class="nav-link" href="#">Text Encripter</a></li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a id="btndencri" class="nav-link" href="#">Password Decripter </a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+<div class="box" data-aos="zoom-in-right" id="box" >
+    <lottie-player class="lottie" src="https://assets4.lottiefiles.com/packages/lf20_z3pnisgt.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
+    <h3> Random Password Gernator</h3>
+    <br>
+    <input type="text" name="" placeholder="Create password" id="password" readonly>
+    <table>
+        <th><div id="button" class="btn1"onclick="genPassword()">Generate</div></th>
+        <th><a  id="button" class="btn2" onclick="copyPassword()">Copy</a></th>
+     </table>
+</div>
+<div class="encri" id="encri">
+  <h3> Text Encryption</h3>
+    <form id="encrypt-set">
+      <div class="field">
+        <label class="label">Plain string to encrypt</label>
+        <div class="control">
+          <textarea class="form-control" id="encrypt-plain-string" type="text" placeholder="Plain string"></textarea>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Password to encode string with</label>
+        <div class="control">
+          <input class="input input-string" id="encrypt-password" type="text" placeholder="Password">
+        </div>
+      </div>
+<br>
+      <div class="field is-grouped">
+        <p class="control">
+          <input id="encrypt-submit" type="submit" value="Encrypt" class="btn btn-success">
+        </p>
+
+        <p class="control">
+          <input type="reset" value="Clear" class="btn btn-danger">
+        </p>
+      </div>
+    </form>
+
+    <div class="result encryption-result-section notification">
+      <h3 class="subtitle">Encrypted string</h3>
+      <textarea id="encrypted-result" class="result-section"></textarea>
+      <table>
+        <th><a  id="button" class="btn2" onclick=" copyencri()">Copy</a></th>
+     </table>
+      
+    </div>
+  </div>
+  <div class="dencri" id="dencri">
+    <h3> Text Dencryption</h3>
+    <lottie-player class="lottiedencri" src="https://assets6.lottiefiles.com/packages/lf20_j4aizf33.json"  background="transparent"  speed="1"  style="width: 300px; height: 100px;"  loop  autoplay></lottie-player>
+   <br>
+    <form id="decrypt-set">
+      <div class="field">
+        <label class="label">Encrypted string to decrypt</label>
+        <div class="control">
+          <input class="input input-string" id="decrypt-plain-string" type="text" placeholder="Encrypted string">
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Password to encode string with</label>
+        <div class="control">
+          <input class="input input-string" id="decrypt-password" type="text" placeholder="Password">
+        </div>
+      </div>
+
+      <div class="field is-grouped">
+        <p class="control">
+          <input id="decrypt-submit" type="submit" value="Decrypt" class="btn btn-success">
+        </p>
+
+        <p class="control">
+          <input type="submit" value="Clear" class="btn btn-danger">
+        </p>
+      </div>
+    </form>
+
+    <div class="result decryption-result-section notification">
+      <h3 class="subtitle">Decrypted string</h3>
+      <span id="decrypted-result" class="result-section"></span>
+      
+    </div>
+  </div>
+  <script src="assets/js/denc-animation.js"></script>
+   <script src="assets/js/enc-animation.js"></script> 
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<script src="assets/js/div-animation.js"></script>
+
+<script src="assets/js/password-gernator.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+.encri{
+    width: 800px;
+    border: 15px transparent;
+    padding: 50px;
+    margin: 20px;
+      background-color: white;
+      padding-top: 30px;
+      padding: 30px;
+      margin-top: 5px;
+      margin-left: 400px;
+      text-align: center;
+      display: none;
+   
+    }
+    .notification {
+        margin-top: 30px;
+        padding: 1.25rem 1.5rem;
+      }
+      
+      @media screen and (min-width: 769px) {
+        .column { min-width: 47%; }
+      }
+      
+      .title, .subtitle {
+        text-align: center;
+      }
+      
+      p {
+        word-wrap: break-word;
+      }
+.input-text{
+    width: 100%;
+    height: 50%;
+}
